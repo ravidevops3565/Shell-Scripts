@@ -8,7 +8,7 @@ num2=$2
 
 
 
-TIMESTAMP =$(date) # it will execute the date command and will pass the value to the variable dynamically 
+TIMESTAMP=$(date) # it will execute the date command and will pass the value to the variable dynamically 
 
 echo "script executed: $TIMESTAMP"
 
