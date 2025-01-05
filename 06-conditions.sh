@@ -23,7 +23,7 @@ dnf install git -y
 
 if [ $? -ne 0 ]
 then
-    echo "Mysql Installation....Failure"
+    echo "Git Installation....Failure"
 else 
-    echo "Mysql Installation....Success"
+    echo "Git Installation....Success"
 fi
