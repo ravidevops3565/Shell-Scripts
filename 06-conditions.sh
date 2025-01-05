@@ -3,7 +3,7 @@
 date
 USERID=$(id -u)
 
-if [$userid -ne 0]
+if [$USERID -ne 0]
 then 
     echo "Please make sure that you are a root user"
     exit 1
