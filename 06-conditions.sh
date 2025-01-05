@@ -15,11 +15,12 @@ then
 
     dnf install mysql -y
 
-      if [ $? -ne 0 ]
-      then 
-          echo "Mysql Installation....Failure"
-      else 
-          echo "Mysql Installation....Success"
+    if [ $? -ne 0 ]
+    then 
+        echo "Mysql Installation....Failure"
+    else 
+        echo "Mysql Installation....Success"
+    fi
 else 
     echo "My Sql software is already INSTALLED"
 
@@ -31,12 +32,13 @@ then
 
     dnf install git -y
 
-      if [ $? -ne 0 ]
+    if [ $? -ne 0 ]
 
-      then
-         echo "Git Installation....Failure"
-      else 
-         echo "Git Installation....Success"
+    then
+        echo "Git Installation....Failure"
+    else 
+        echo "Git Installation....Success"
+    fi
 
 else 
     echo "GIT software is already INSTALLED"
