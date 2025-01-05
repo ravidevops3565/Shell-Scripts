@@ -3,6 +3,15 @@
 date
 USERID=$(id -u)
 
+VALIDATE() {
+            if [ $1 -ne 0 ]
+            then 
+              echo "$2....Failure"
+            else 
+              echo "$2....Success"
+            fi
+}
+
 if [ $USERID -ne 0 ]
 then 
     echo "ERROR:Please make sure that you are a root user"
@@ -14,13 +23,9 @@ if [ $? -ne 0 ]
 then
 
     dnf install mysql -y
+    VALIDATE $? "Installing MySQL"
 
-    if [ $? -ne 0 ]
-    then 
-        echo "Mysql Installation....Failure"
-    else 
-        echo "Mysql Installation....Success"
-    fi
+    
 else 
     echo "My Sql software is already INSTALLED"
 
@@ -31,14 +36,7 @@ if [ $? -ne 0 ]
 then
 
     dnf install git -y
-
-    if [ $? -ne 0 ]
-
-    then
-        echo "Git Installation....Failure"
-    else 
-        echo "Git Installation....Success"
-    fi
+    VALIDATE $? "Installing GIT"
 
 else 
     echo "GIT software is already INSTALLED"
