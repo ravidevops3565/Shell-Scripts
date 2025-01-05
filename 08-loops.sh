@@ -33,7 +33,7 @@ do
    then 
        dnf install $package -y &>>$LOG_FILE_NAME
    else 
-       echo "Package already INSTALLED")
+       echo "Package already INSTALLED"
    fi
 
 done
