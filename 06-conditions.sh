@@ -19,7 +19,7 @@ else
 
 fi
 
-dnt install git -y
+dnf install git -y
 
 if [ $? -ne 0 ]
 then
