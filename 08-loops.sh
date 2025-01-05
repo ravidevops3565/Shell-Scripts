@@ -26,26 +26,14 @@ then
     exit 1
 fi
 
-dnf list installed mysql &>>$LOG_FILE_NAME
-if [ $? -ne 0 ]
-then
+for package in $@
+do 
+   dnf list installed $package &>>$LOG_FILE_NAME
+   if [ $? -ne 0]
+   then 
+       dnf install $package -y &>>$LOG_FILE_NAME
+   else 
+       echo "Package already INSTALLED")
+   fi
 
-    dnf install mysql -y &>>$LOG_FILE_NAME
-    VALIDATE $? "Installing MySQL"
-
-    
-else 
-    echo "My Sql software is already INSTALLED"
-
-fi
-
-dnf list installed git &>>$LOG_FILE_NAME
-if [ $? -ne 0 ]
-then
-
-    dnf install git -y &>>$LOG_FILE_NAME
-    VALIDATE $? "Installing GIT"
-
-else 
-    echo "GIT software is already INSTALLED"
-fi
+done
